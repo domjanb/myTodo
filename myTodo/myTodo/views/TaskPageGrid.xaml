@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="myTodo.views.TaskPageGrid"
+             Title="myTaskPageGrid">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="Új feladat rögzítése"/>
+            <Entry x:Name="entryTitle"  Text="Új feladat leírása" Grid.Column="1"/>
+            <Label Text="Fontosság" Grid.Row="1"/>
+            <Picker x:Name="pickerPriority"  Grid.Column="1" Grid.Row="1">
+                <Picker.Items >
+                    <x:String>Ráér</x:String>
+                    <x:String>Normál</x:String>
+                    <x:String>Sürgős</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>1</Picker.SelectedIndex>
+            </Picker>
+            <Label Text="Határnap" Grid.Row="2"/>
+            <DatePicker x:Name="dueDate" Grid.Column="1" Grid.Row="2"/>
+            <Label Text="Határidő"  Grid.Row="3"/>
+            <TimePicker x:Name="dueTime" Grid.Column="1" Grid.Row="3"/>
+            <Label Text="Elintézve"  Grid.Row="4"/>
+            <Switch x:Name="switchSolved" Grid.Column="1" Grid.Row="4"/>
+            
+            <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="4">
+                <Button x:Name="btnCancel" Text="Mégsem" Clicked="btnCancel_Clicked"/>
+                <Button x:Name="btnOK"  Text ="Mentés" Clicked="btnOK_Clicked"/>
+                <Button x:Name="btnList"  Text="Lista" Clicked="btnList_Clicked"/>
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

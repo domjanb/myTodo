@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="myTodo.views.TaskPage"
+             Title="myTaskPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Új feladat rögzítése"
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="entryTitle"  Text="Új feladat leírása"/>
+            <Picker x:Name="pickerPriority"  Title="Fontosság">
+                <Picker.Items>
+                    <x:String>Ráér</x:String>
+                    <x:String>Normál</x:String>
+                    <x:String>Sürgős</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>1</Picker.SelectedIndex>
+            </Picker>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Határnap"/>
+                <DatePicker x:Name="dueDate"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Határidő"/>
+                <TimePicker x:Name="dueTime"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Elintézve"/>
+                <Switch x:Name="switchSolved"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnCancel" Text="Mégsem" Clicked="btnCancel_Clicked"/>
+                <Button x:Name="btnOK"  Text ="Mentés" Clicked="btnOK_Clicked"/>
+                <Button x:Name="btnList"  Text="Lista" Clicked="btnList_Clicked"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
